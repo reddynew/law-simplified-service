@@ -262,7 +262,7 @@ const ChatBot = () => {
       {!isOpen && (
         <Button 
           onClick={handleOpen}
-          className="bg-black text-white shadow-lg h-12 w-12 rounded-full p-0 flex items-center justify-center"
+          className="bg-[#403E43] text-white shadow-lg h-12 w-12 rounded-full p-0 flex items-center justify-center"
         >
           <MessageSquare className="h-5 w-5 text-white" />
         </Button>
@@ -273,7 +273,7 @@ const ChatBot = () => {
         <div className={`bg-white rounded-lg shadow-xl border border-gray-200 w-[350px] md:w-[400px] transition-all duration-300 ${isMinimized ? 'h-14' : 'h-[500px]'}`}>
           {/* Chat header */}
           {isMinimized ? (
-            <div className="bg-black text-white p-4 rounded-t-lg flex justify-between items-center h-14">
+            <div className="bg-[#403E43] text-white p-4 rounded-t-lg flex justify-between items-center h-14">
               <Button 
                 variant="ghost" 
                 size="icon"
@@ -284,7 +284,7 @@ const ChatBot = () => {
               </Button>
             </div>
           ) : (
-            <div className="bg-black text-white p-4 rounded-t-lg flex justify-between items-center">
+            <div className="bg-[#403E43] text-white p-4 rounded-t-lg flex justify-between items-center">
               <div className="font-semibold">Law Suvidha Assistant</div>
               <div className="flex space-x-2">
                 <Button 
@@ -314,7 +314,7 @@ const ChatBot = () => {
                 {messages.map((message, index) => (
                   <div key={index}>
                     <div className={`mb-4 max-w-[80%] ${message.type === 'user' ? 'ml-auto' : 'mr-auto'}`}>
-                      <div className={`p-3 rounded-lg ${message.type === 'user' ? 'bg-black text-white' : 'bg-gray-100 text-black'}`}>
+                      <div className={`p-3 rounded-lg ${message.type === 'user' ? 'bg-[#403E43] text-white' : 'bg-gray-100 text-black'}`}>
                         {message.text}
                       </div>
                     </div>
@@ -340,7 +340,7 @@ const ChatBot = () => {
               
               {/* Chat input */}
               <div className="p-4 border-t">
-                <div className="flex space-x-2">
+                <div className="flex items-center space-x-2">
                   <Input
                     type="text"
                     placeholder="Type your message..."
@@ -351,7 +351,7 @@ const ChatBot = () => {
                     disabled={messages.length > 0 && messages[messages.length - 1].options !== undefined}
                   />
                   <Button 
-                    className="bg-black text-white"
+                    className="bg-[#403E43] text-white shrink-0"
                     onClick={handleSend}
                     disabled={messages.length > 0 && messages[messages.length - 1].options !== undefined}
                   >

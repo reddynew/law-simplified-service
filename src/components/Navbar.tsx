@@ -25,7 +25,7 @@ const Navbar = () => {
               variant="ghost" 
               size="icon" 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-black"
+              className="text-[#403E43]"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
@@ -41,10 +41,10 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="outline" className="text-black border-black hover:bg-black hover:text-white">
+            <Button variant="outline" className="text-[#403E43] border-[#403E43] hover:bg-[#403E43] hover:text-white">
               Login
             </Button>
-            <Button className="bg-black text-white hover:bg-gray-800">
+            <Button className="bg-[#403E43] text-white hover:bg-[#221F26]">
               Sign Up
             </Button>
           </nav>
@@ -65,10 +65,10 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="flex flex-col space-y-2 pt-2">
-                <Button variant="outline" className="text-black border-black hover:bg-black hover:text-white w-full">
+                <Button variant="outline" className="text-[#403E43] border-[#403E43] hover:bg-[#403E43] hover:text-white w-full">
                   Login
                 </Button>
-                <Button className="bg-black text-white hover:bg-gray-800 w-full">
+                <Button className="bg-[#403E43] text-white hover:bg-[#221F26] w-full">
                   Sign Up
                 </Button>
               </div>
