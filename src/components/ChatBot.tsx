@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Plus, Send, MessageSquare } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -261,9 +262,9 @@ const ChatBot = () => {
       {!isOpen && (
         <Button 
           onClick={handleOpen}
-          className="bg-black text-white shadow-lg h-14 w-14 rounded-full"
+          className="bg-black text-white shadow-lg h-12 w-12 rounded-full p-0 flex items-center justify-center"
         >
-          <MessageSquare className="h-6 w-6" />
+          <MessageSquare className="h-5 w-5 text-white" />
         </Button>
       )}
 
@@ -279,7 +280,7 @@ const ChatBot = () => {
                 className="h-8 w-8 text-white hover:bg-white/10 ml-auto"
                 onClick={handleMinimize}
               >
-                <Plus size={18} />
+                <Plus size={18} className="text-white" />
               </Button>
             </div>
           ) : (
@@ -300,7 +301,7 @@ const ChatBot = () => {
                   className="h-8 w-8 text-white hover:bg-white/10"
                   onClick={handleClose}
                 >
-                  <X size={18} />
+                  <X size={18} className="text-white" />
                 </Button>
               </div>
             </div>

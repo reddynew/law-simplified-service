@@ -18,10 +18,12 @@ const Index = () => {
         <Services />
         <Expertise />
         <Testimonials />
+        <div id="faq">
+          <Faq />
+        </div>
       </main>
       <Footer />
       <ChatBot />
-      <Faq />
     </div>
   );
 };
