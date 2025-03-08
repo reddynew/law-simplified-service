@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Plus, Send, MessageSquare } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -272,27 +271,40 @@ const ChatBot = () => {
       {isOpen && (
         <div className={`bg-white rounded-lg shadow-xl border border-gray-200 w-[350px] md:w-[400px] transition-all duration-300 ${isMinimized ? 'h-14' : 'h-[500px]'}`}>
           {/* Chat header */}
-          <div className="bg-black text-white p-4 rounded-t-lg flex justify-between items-center">
-            <div className="font-semibold">Law Suvidha Assistant</div>
-            <div className="flex space-x-2">
+          {isMinimized ? (
+            <div className="bg-black text-white p-4 rounded-t-lg flex justify-between items-center h-14">
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="h-8 w-8 text-white hover:bg-white/10"
+                className="h-8 w-8 text-white hover:bg-white/10 ml-auto"
                 onClick={handleMinimize}
               >
-                {isMinimized ? <Plus size={18} /> : <div className="w-4 h-0.5 bg-white rounded"></div>}
-              </Button>
-              <Button 
-                variant="ghost" 
-                size="icon"
-                className="h-8 w-8 text-white hover:bg-white/10"
-                onClick={handleClose}
-              >
-                <X size={18} />
+                <Plus size={18} />
               </Button>
             </div>
-          </div>
+          ) : (
+            <div className="bg-black text-white p-4 rounded-t-lg flex justify-between items-center">
+              <div className="font-semibold">Law Suvidha Assistant</div>
+              <div className="flex space-x-2">
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className="h-8 w-8 text-white hover:bg-white/10"
+                  onClick={handleMinimize}
+                >
+                  <div className="w-4 h-0.5 bg-white rounded"></div>
+                </Button>
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className="h-8 w-8 text-white hover:bg-white/10"
+                  onClick={handleClose}
+                >
+                  <X size={18} />
+                </Button>
+              </div>
+            </div>
+          )}
 
           {/* Chat body */}
           {!isMinimized && (
