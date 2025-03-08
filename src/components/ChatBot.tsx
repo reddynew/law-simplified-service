@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Plus, Send, MessageSquare } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -270,18 +269,14 @@ const ChatBot = () => {
 
       {/* Chat window */}
       {isOpen && (
-        <div className={`bg-white rounded-lg shadow-xl border border-gray-200 w-[350px] md:w-[400px] transition-all duration-300 ${isMinimized ? 'h-14' : 'h-[500px]'}`}>
+        <div className={`bg-white rounded-lg shadow-xl border border-gray-200 w-[350px] md:w-[400px] transition-all duration-300 ${isMinimized ? 'h-12 w-12 rounded-full overflow-hidden' : 'h-[500px]'}`}>
           {/* Chat header */}
           {isMinimized ? (
-            <div className="bg-[#403E43] text-white p-4 rounded-t-lg flex justify-between items-center h-14">
-              <Button 
-                variant="ghost" 
-                size="icon"
-                className="h-8 w-8 text-white hover:bg-white/10 ml-auto"
-                onClick={handleMinimize}
-              >
-                <Plus size={18} className="text-white" />
-              </Button>
+            <div 
+              className="bg-[#403E43] text-white h-12 w-12 rounded-full flex items-center justify-center cursor-pointer"
+              onClick={handleMinimize}
+            >
+              <Plus size={20} className="text-white" />
             </div>
           ) : (
             <div className="bg-[#403E43] text-white p-4 rounded-t-lg flex justify-between items-center">
@@ -339,15 +334,15 @@ const ChatBot = () => {
               </div>
               
               {/* Chat input */}
-              <div className="p-4 border-t">
-                <div className="flex items-center space-x-2">
+              <div className="p-4 border-t w-full">
+                <div className="flex items-center space-x-2 w-full">
                   <Input
                     type="text"
                     placeholder="Type your message..."
                     value={userInput}
                     onChange={(e) => setUserInput(e.target.value)}
                     onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                    className="flex-grow"
+                    className="flex-1 min-w-0"
                     disabled={messages.length > 0 && messages[messages.length - 1].options !== undefined}
                   />
                   <Button 
