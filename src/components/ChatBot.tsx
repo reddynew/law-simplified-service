@@ -244,18 +244,19 @@ const ChatBot = () => {
         }, 500);
         break;
 
-      case 'end':
+        case 'end':
+        try{
+        const response=axios.post('https://fusion-b0mu.onrender.com/api/store',userData);
+        console.log(response);
+        }catch(error){
+          console.log(error);
+
+        }
         toast({
           title: "Chat completed",
           description: "Thank you for contacting Law Suvidha!",
           duration: 3000,
         });
-        try{
-        const response=axios.post('http://localhost:3000/api/store',userData);
-        console.log(response);
-        }catch(error){
-          console.log(error);
-        }
 
         handleClose();
         break;
